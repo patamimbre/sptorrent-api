@@ -1,3 +1,4 @@
+![Repository Logo](site-banner.png)
 ### Dockerized Sinatra / Mongoid App over Puma via Foreman
 
 #### Requirements
