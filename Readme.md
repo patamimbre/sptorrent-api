@@ -24,6 +24,34 @@ brew install docker-compose
 
 ### Usage
 
+#### Directory Layout
+```
+app
+├── Gemfile
+├── Gemfile.lock
+├── Procfile
+├── app.rb
+├── conf
+│   ├── app_config.rb
+│   ├── init.rb
+│   └── mongoid.yml
+├── config.ru
+├── logs
+│   └── app.log
+├── models
+│   ├── init.rb
+│   ├── sample_data.rb
+│   └── user.rb
+├── public
+│   └── css
+│       └── app.css
+├── routes
+│   ├── diag.rb
+│   └── init.rb
+└── views
+    └── index.erb
+```
+
 #### Basic Usage
 The skeleton is straightforward to use.
 
@@ -31,9 +59,9 @@ The skeleton is straightforward to use.
 * Configure additional Mongoid settings in `conf/mongoid.yml`.
 * Add your views to `views/`.
 * Put you static assets into `public/` folder.
-* Add your routes to `routes/` (don't forget to add a `require` to `routes/init.rb`).
-* Add Mongoid models to `models/` (don't forget to add a `require` to `models/init.rb`).
-* Execute via `docker-compose up`.
+* Add your controllers to `routes/` (don't forget to add a `require_relative` to `routes/init.rb`).
+* Add Mongoid data models to `models/` (don't forget to add a `require_relative` to `models/init.rb`).
+* Run via `docker-compose up`.
 * Access the application at `http://192.168.99.100:5678`
 
 #### Diagnostic URLs
