@@ -1,0 +1,6 @@
+<ol>
+  <% @results.each do |e| %>
+      <li><a href="/entry/<%=e[:id]%>"><%=e[:name]%></a></li>
+  <% end %>
+
+</ol>
