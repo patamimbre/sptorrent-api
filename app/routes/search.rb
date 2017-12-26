@@ -39,27 +39,36 @@ class App < Sinatra::Application
   end
 
    get '/entry/:id' do |id|
-     content_type :json
+     @a_entry = Entry.find(id)
 
-     a_entry = Entry.find(id)
-
-     tipo = a_entry[:type]
+     tipo = @a_entry[:type]
 
      if tipo == 'serie'
-       links = Parser.search_tv_show(a_entry)
+       links = Parser.search_tv_show(@a_entry)
      elsif tipo == 'pelicula'
-       links = Parser.search_movie(a_entry)
+       links = Parser.search_movie(@a_entry)
      end
 
-     a_entry.set(links: links)
-     a_entry.to_json
+     @a_entry.set(links: links)
+
+     if params[:json] == 'yes'
+       content_type :json
+       @a_entry.to_json
+     else
+       if tipo == 'pelicula'
+         erb :movie
+       else
+         erb :show
+       end
+     end
+
 
 
    end
 
   get '/all/*' do
     content_type :json
-    Entry.all.to_json
+    Entry.all[1..-1].to_json
   end
 
   private

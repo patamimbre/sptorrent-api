@@ -1,0 +1,10 @@
+<html>
+  <body>
+    <h3> <%=@a_entry[:name]%> </h3>
+    <ul>
+      <% @a_entry[:links].each do |e| %>
+        <li><a href="<%= e[:url]%>"> <%= e[:episode] + ' - ' + e[:season] %> </a></li>
+      <% end %>
+    </ul>
+  </body>
+</html>
