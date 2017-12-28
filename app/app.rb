@@ -2,6 +2,7 @@
 require 'rubygems'
 require 'bundler'
 require 'sinatra/base'
+require 'json'
 
 # Let Bundler do it's magic
 Bundler.require(:default)
@@ -22,7 +23,8 @@ class App < Sinatra::Application
   set :session_secret, CONF_SESSION_SECRET
 
   get '/' do
-    erb :index
+    content_type :json
+    {'status'=>'OK'}.to_json
   end
 
 end
