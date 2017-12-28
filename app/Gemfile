@@ -6,3 +6,12 @@ gem 'sinatra', :require => 'sinatra/base'
 gem 'mongoid'
 gem 'haml'
 gem 'nokogiri'
+
+# for testing
+
+gem 'minitest'
+gem 'rack'
+gem 'rack-test'
+gem 'guard'
+gem 'guard-minitest'
+
