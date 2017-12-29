@@ -3,8 +3,9 @@ rvm:
   - 2.3.1
 
 before_install:
-  - cd app
   - gem install bundle
-  - bundle install
+  - bundle install --gemfile=app/Gemfile
 
-script: rake
+script:
+  - cd app 
+  - rake
