@@ -44,15 +44,19 @@ Los resultados son mostrados en una página web muy simple. Si se desean en *JSO
 #### Capturas de pantalla
 
 *Búsqueda*
+
 ![](img/search.png)
 
 *Búsqueda (como JSON)*
+
 ![](img/search_json.png)
 
 *Entrada*
+
 ![](img/entry.png)
 
 *Entrada (como JSON)*
+
 ![](img/entry_json.png)
 
 ### To Do
