@@ -10,4 +10,13 @@ describe "check correct responses" do
     assert last_response.ok?
     assert json.must_equal exp
   end
+
+  it "/ should return status" do
+    exp = {'status'=>'OK'}
+    get '/'
+    json = JSON.parse(last_response.body)
+    assert last_response.ok?
+    assert json.must_equal exp
+  end
 end
+
