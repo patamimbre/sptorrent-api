@@ -1,77 +1,61 @@
 ![Repository Logo](site-banner.png)
 ### Dockerized Sinatra / Mongoid App over Puma via Foreman
 
-#### Requirements
-* `docker` version 1.11.0 or newer
-* `docker-compose` version 1.6.0 or newer
-* On Mac OS X, the repository needs to be either checked out to a path under `/Users/$(whoami)/`, or you need to modify the docker-machine VirtualBox instance to allow further file permissions. Otherwise overlaying the ./app directory inside the docker container will fail. This is a known limitation for VirtualBox under Mac OS X.
+#### Introducción 
 
-#### Docker Installation of Mac OS X 10.11 (El Capitan)
+La aplicación ha sido desarrollada según los conocimientos adquiridos en la asignatura **Infraestructura Virtual** impartida en la UGR. 
 
-##### Installation of Homebrew
-Homebrew installation is easy, a single command:
-```
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+Su principal funcionamiento es buscar en la web enlaces torrent a series y películas.
 
-##### Installation of Docker
-Once we have Homebrew available, we can install Docker with these commands:
-```
-brew update
-brew install docker
-brew install docker-compose
-```
+Para su desarrollo, se han empleado distintas tecnologías:
 
-### Usage
+* **Ruby** como lenguaje de programación.
+* **Sinatra** como framework para la API.
+* **Puma** como servidor web Rack.
+* **MongoDB** como base de datos.
+* **Mongoid** como framework ODM (Object-Document-Mapper).
+* **Guard** para TDD
+* **Foreman**
+* **Travis CI** para integración continua.
+* **Docker** y **Docker Compose**
 
-#### Directory Layout
-```
-app
-├── Gemfile
-├── Gemfile.lock
-├── Procfile
-├── app.rb
-├── conf
-│   ├── app_config.rb
-│   ├── init.rb
-│   └── mongoid.yml
-├── config.ru
-├── logs
-│   └── app.log
-├── models
-│   ├── init.rb
-│   ├── sample_data.rb
-│   └── user.rb
-├── public
-│   └── css
-│       └── app.css
-├── routes
-│   ├── diag.rb
-│   └── init.rb
-└── views
-    └── index.erb
-```
+### Uso
 
-#### Basic Usage
-The skeleton is straightforward to use.
+#### Uso básico
+* Para correr la aplicación usa `docker-compose up`. 
+* Accede a la aplicación en `0.0.0.0:5678`
 
-* Set a `session_secret` value in `conf/app_config.rb`.
-* Configure additional Mongoid settings in `conf/mongoid.yml`.
-* Add your views to `views/`.
-* Put you static assets into `public/` folder.
-* Add your controllers to `routes/` (don't forget to add a `require_relative` to `routes/init.rb`).
-* Add Mongoid data models to `models/` (don't forget to add a `require_relative` to `models/init.rb`).
-* Run via `docker-compose up`.
-* Access the application at `http://192.168.99.100:5678`
+#### Rutas para el uso de la aplicación
+* `0.0.0.0:5678/status` devuelve el estado de la aplicación (JSON)
+* `0.0.0.0:5678/search/<nombre>` busca series y películas
+* `0.0.0.0:5678/search/<nombre>?json=yes` busca series y películas (Devuelve un JSON con las coincidencias)
+* `0.0.0.0:5678/entry/<id>` muestra los enlaces de descarga
+* `0.0.0.0:5678/entry/<id>?json=yes` muestra los enlaces de descarga (como JSON)
+* `0.0.0.0:5678/all/` muestra la base de datos actual
 
-#### Diagnostic URLs
-By default, the application skeleton includes some diagnostic routes:
-* `http://192.168.99.100:5678/memory` will print memory information
-* `http://192.168.99.100:5678/disk` will print disk information
-* `http://192.168.99.100:5678/env` will print environment information
+### Funcionamiento
 
-#### App Shutdown
-You can gracefully shutdown the app using the `http://192.168.99.100:5678/exit` URL.
+La aplicación se nutre de [](http://www.divxtotal2.net). Cada vez que se realiza una búsqueda, la API busca directamente en esta web los resultados coincidentes y estos son almacenados en la base de datos local. 
 
-#### Disabling Diagnostic URLs
-If you do not desire these diagnostic URLs, uncomment the line `require_relative 'diag'` in `routes/init.rb`
+Cada uno de los resultados es guardado con un *ID identificativo*. Cuando se accede a */entry/<ID>*, la aplicación busca los enlaces a la serie indicada y los muestra al usuario.
+
+Los resultados son mostrados en una página web muy simple. Si se desean en *JSON* basta con añadir al final de la dirección web **?json=yes**.
+
+### To Do
+
+En la fecha actual, el programa es funcional, aunque quedan muchos apartados que mejorar e implementar.
+
+* Las series que tienen como descarga temporadas completas en lugar de capitulos sueltos no son mostradas correctamente en el navegador, aunque si funcionan con JSON (un ejemplo es "friends")
+* Algunas rutas muestran un error, deben ser redireccionadas a una página común
+* Descargar todos los capítulos de una serie al completo en formato .zip
+* Implementar integración continua
+* Desplegar en Heroku
+* Subir a DockerHub
+* MUCHAS OTRAS
+
+### INFO
+
+No me hago responsable del mal uso de está aplicación. En ningún caso se almacenan archivos en la base de datos.
+
+Made with ❤️ in Granada
+
