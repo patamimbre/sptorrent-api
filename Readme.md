@@ -1,9 +1,7 @@
 ![Repository Logo](img/site-banner.png)
 ### Dockerized Sinatra / Mongoid App over Puma via Foreman
 
-```
 [![Build Status](https://travis-ci.org/patamimbre/sptorrent-api.svg?branch=master)](https://travis-ci.org/patamimbre/sptorrent-api)
-```
 
 #### Introducción 
 
