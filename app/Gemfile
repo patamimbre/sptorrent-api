@@ -9,6 +9,7 @@ gem 'nokogiri'
 
 # for testing
 
+gem 'rake'
 gem 'minitest'
 gem 'rack'
 gem 'rack-test'

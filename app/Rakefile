@@ -1,0 +1,7 @@
+require "minitest/autorun"
+
+task :default => :test
+task :test do
+  Dir.glob("spec/*_spec.rb") { |f| require_relative(f) }
+end
+
