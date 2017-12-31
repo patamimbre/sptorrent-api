@@ -35,6 +35,14 @@ Para su desarrollo, se han empleado distintas tecnologías:
 * `0.0.0.0:5678/entry/<id>?json=yes` muestra los enlaces de descarga (como JSON)
 * `0.0.0.0:5678/all/` muestra la base de datos actual
 
+#### Despliegue en Heroku
+[![Heroku 
+Deploy](https://www.herokucdn.com/deploy/button.svg)](https://sleepy-brushlands-97842.herokuapp.com/)
+
+Despliegue https://sleepy-brushlands-97842.herokuapp.com/
+
+
+
 #### Funcionamiento
 
 La aplicación se nutre de [](http://www.divxtotal2.net). Cada vez que se realiza una búsqueda, la API busca directamente en esta web los resultados coincidentes y estos son almacenados en la base de datos local. 
