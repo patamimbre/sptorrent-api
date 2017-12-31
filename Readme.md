@@ -41,6 +41,16 @@ Deploy](https://www.herokucdn.com/deploy/button.svg)](https://sleepy-brushlands-
 
 Despliegue https://sleepy-brushlands-97842.herokuapp.com/
 
+#### Despliegue en Zeit
+
+Contenedor https://sptorrent-api-rjakfewbqo.now.sh/status
+
+#### Contenedor en DockerHub
+
+https://hub.docker.com/r/patamimbre/sptorrent-api/
+
+`docker pull patamimbre/sptorrent-api`
+
 
 
 #### Funcionamiento

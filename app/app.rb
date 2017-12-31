@@ -22,6 +22,8 @@ class App < Sinatra::Application
   enable :sessions
   set :session_secret, CONF_SESSION_SECRET
 
+  set :bind, "0.0.0.0"
+
   get '/' do
     content_type :json
     {'status'=>'OK'}.to_json
