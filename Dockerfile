@@ -61,5 +61,6 @@ ADD app/Gemfile.lock /app/Gemfile.lock
 RUN bundle install
 ADD ./app /app
 
+ENV PORT 5678
 EXPOSE 5678
 CMD ["foreman", "start", "-d", "/app"]

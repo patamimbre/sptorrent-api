@@ -3,7 +3,7 @@
     <h3> <%=@a_entry[:name]%> </h3>
     <ul>
       <% @a_entry[:links].each do |e| %>
-        <li><a href="<%= e[:url]%>"> <%= e[:episode] + ' - ' + e[:season] %> </a></li>
+        <li><a href="<%= e[:url]%>"> <%= e[:season] + 'x' + e[:episode] %> </a></li>
       <% end %>
     </ul>
   </body>
