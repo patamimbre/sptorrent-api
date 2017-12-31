@@ -3,6 +3,7 @@
 # Localy used variables
 export RACK_HOME="/app"
 export RACK_ENV="development"
+export PORT="5678"
 
 # Prerequisites
 cd ${RACK_HOME} && \

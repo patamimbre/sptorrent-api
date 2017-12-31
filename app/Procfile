@@ -1,2 +1,2 @@
-web: bundle exec rackup config.ru -p 5678 -s puma -o 0.0.0.0
+web: bundle exec rackup config.ru -p $PORT -s puma -o 0.0.0.0
 guard: bundle exec guard -i
