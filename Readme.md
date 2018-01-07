@@ -51,8 +51,6 @@ https://hub.docker.com/r/patamimbre/sptorrent-api/
 
 `docker pull patamimbre/sptorrent-api`
 
-
-
 #### Funcionamiento
 
 La aplicación se nutre de [](http://www.divxtotal2.net). Cada vez que se realiza una búsqueda, la API busca directamente en esta web los resultados coincidentes y estos son almacenados en la base de datos local. 
@@ -60,6 +58,14 @@ La aplicación se nutre de [](http://www.divxtotal2.net). Cada vez que se realiz
 Cada uno de los resultados es guardado con un *ID identificativo*. Cuando se accede a */entry/<ID>*, la aplicación busca los enlaces a la serie indicada y los muestra al usuario.
 
 Los resultados son mostrados en una página web muy simple. Si se desean en *JSON* basta con añadir al final de la dirección web **?json=yes**.
+
+#### Documentos para el despliegue y desarrollo de la aplicación.
+
+[PaaS - Despliegue en Heroku](https://github.com/patamimbre/IV_Trabajos/blob/master/paas.md)
+
+[IaaS - Despliegue en Azure](https://github.com/patamimbre/IV_Trabajos/blob/master/iaas.md)
+
+
 
 #### Capturas de pantalla
 
@@ -78,19 +84,6 @@ Los resultados son mostrados en una página web muy simple. Si se desean en *JSO
 *Entrada (como JSON)*
 
 ![](img/entry_json.png)
-
-### To Do
-
-En la fecha actual, el programa es funcional, aunque quedan muchos apartados que mejorar e implementar.
-
-* Las series que tienen como descarga temporadas completas en lugar de capitulos sueltos no son mostradas correctamente en el navegador, aunque si funcionan con JSON (un ejemplo es "friends")
-* Algunas rutas muestran un error, deben ser redireccionadas a una página común
-* Rediseño completo html y css
-* Descargar todos los capítulos de una serie al completo en formato .zip
-* Implementar integración continua
-* Desplegar en Heroku
-* Subir a DockerHub
-* MUCHAS OTRAS
 
 ### INFO
 
