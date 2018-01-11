@@ -1,3 +1,5 @@
+/despliegue/*.pyc
+
 **/.DS_Store
 *.gem
 *.rbc
