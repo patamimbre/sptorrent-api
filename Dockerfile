@@ -62,5 +62,5 @@ RUN bundle install
 ADD ./app /app
 
 ENV PORT 5678
-EXPOSE $PORT
+EXPOSE 80 $PORT
 CMD ["foreman", "start", "-d", "/app"]
