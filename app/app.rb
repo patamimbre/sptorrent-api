@@ -21,6 +21,7 @@ class App < Sinatra::Application
   set :root, File.dirname(__FILE__)
   enable :sessions
   set :session_secret, CONF_SESSION_SECRET
+  set :protection, :except => [:json_csrf]
 
   set :bind, "0.0.0.0"
 
