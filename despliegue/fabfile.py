@@ -12,9 +12,13 @@ def Install():
 def Uninstall():
 	""" Remove the repo """
 
-	run('sudo rm -rf ./Infraestructura-Virtual_IV')
+	run('sudo rm -rf ./sptorrent-api')
 
 def Start():
 	""" Run docker-ce """
 
-	run('cd ~/sptorrent-api/ && sudo docker-compose up --build &',pty=False)
+	run('cd ~/sptorrent-api/ && sudo docker-compose up --build',pty=False)
+
+def Stop():
+    """ Stop running containers  """
+    run('sudo docker stop $(sudo docker ps -q)')
