@@ -8,7 +8,7 @@ RUN mkdir -p /usr/local/etc \
 
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends $buildDeps \
-	&& rm -rf /var/lib/apt/lists/* 
+	&& rm -rf /var/lib/apt/lists/*
 
 
 RUN gem install bundler
@@ -33,4 +33,6 @@ ADD ./app /app
 
 ENV PORT 5678
 EXPOSE 80 $PORT
+#EXPOSE 80
 CMD ["foreman", "start", "-d", "/app"]
+

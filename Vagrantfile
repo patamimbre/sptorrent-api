@@ -3,7 +3,7 @@ Vagrant.configure('2') do |config|
 
   config.ssh.private_key_path = '~/.ssh/id_rsa'
 # config.vm.network "public_network" 
-# config.vm.network "forwarded_port", guest: 80, host: 80
+  config.vm.network "forwarded_port", guest: 5678, host: 80
   config.vm.provider :azure do |azure, override|
 
     # each of the below values will default to use the env vars named as below if not specified explicitly

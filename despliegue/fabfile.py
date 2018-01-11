@@ -17,4 +17,4 @@ def Uninstall():
 def Start():
 	""" Run docker-ce """
 
-	run('cd ~/sptorrent-api/ && sudo docker-compose up --build',pty=False)
+	run('cd ~/sptorrent-api/ && sudo docker-compose up --build &',pty=False)
