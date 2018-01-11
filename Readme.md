@@ -39,7 +39,7 @@ Para su desarrollo, se han empleado distintas tecnologías:
 [![Heroku 
 Deploy](https://www.herokucdn.com/deploy/button.svg)](https://sleepy-brushlands-97842.herokuapp.com/)
 
-Despliegue https://sleepy-brushlands-97842.herokuapp.com/
+Despliegue https://sleepy-brushlands-97842.herokuapp.com/status
 
 #### Despliegue en Zeit
 
