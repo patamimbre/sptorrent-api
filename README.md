@@ -54,7 +54,7 @@ https://hub.docker.com/r/patamimbre/sptorrent-api/
 #### Despliegue en Azure
 Dado que mi aplicación requiere de dos contenedores para funcionar (API y mongodb) **no era posible su correcto despliegue en Zeit o Heroku**. Quedaba claro que necesitaba algo más poderoso, y lo he conseguido creando una máquina virtual. Los pasos están desarrollados en [este documento](https://github.com/patamimbre/IV_Trabajos/blob/master/iaas.md). 
 
-Despliegue final: [floral-tree-92.westus.cloudapp.azure.com](floral-tree-92.westus.cloudapp.azure.com)
+Despliegue final: floral-tree-92.westus.cloudapp.azure.com
 
 #### Funcionamiento
 
