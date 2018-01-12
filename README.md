@@ -25,15 +25,15 @@ Para su desarrollo, se han empleado distintas tecnologías:
 
 #### Uso básico
 * Para correr la aplicación usa `docker-compose up`. 
-* Accede a la aplicación en `0.0.0.0:5678`
+* Accede a la aplicación en `0.0.0.0`
 
 #### Rutas para el uso de la aplicación
-* `0.0.0.0:5678/status` devuelve el estado de la aplicación (JSON)
-* `0.0.0.0:5678/search/<nombre>` busca series y películas
-* `0.0.0.0:5678/search/<nombre>?json=yes` busca series y películas (Devuelve un JSON con las coincidencias)
-* `0.0.0.0:5678/entry/<id>` muestra los enlaces de descarga
-* `0.0.0.0:5678/entry/<id>?json=yes` muestra los enlaces de descarga (como JSON)
-* `0.0.0.0:5678/all/` muestra la base de datos actual
+* `0.0.0.0/status` devuelve el estado de la aplicación (JSON)
+* `0.0.0.0/search/<nombre>` busca series y películas
+* `0.0.0.0/search/<nombre>?json=yes` busca series y películas (Devuelve un JSON con las coincidencias)
+* `0.0.0.0/entry/<id>` muestra los enlaces de descarga
+* `0.0.0.0/entry/<id>?json=yes` muestra los enlaces de descarga (como JSON)
+* `0.0.0.0/all/` muestra la base de datos actual
 
 #### Despliegue en Heroku
 [![Heroku 
