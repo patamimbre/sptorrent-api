@@ -39,11 +39,11 @@ Para su desarrollo, se han empleado distintas tecnologías:
 [![Heroku 
 Deploy](https://www.herokucdn.com/deploy/button.svg)](https://sleepy-brushlands-97842.herokuapp.com/)
 
-Despliegue https://blooming-caverns-15858.herokuapp.com/
+Despliegue https://blooming-caverns-15858.herokuapp.com
 
 #### Despliegue en Zeit
 
-Contenedor https://sptorrent-api-rjakfewbqo.now.sh/status
+Contenedor https://sptorrent-api-rqkodvifnc.now.sh
 
 #### Contenedor en DockerHub
 
