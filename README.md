@@ -18,7 +18,8 @@ Para su desarrollo, se han empleado distintas tecnologías:
 * **Mongoid** como framework ODM (Object-Document-Mapper).
 * **Guard** para TDD
 * **Foreman**
-* **Travis CI y Rake** para integración continua.
+* **Rake**
+* **Travis CI** para integración continua.
 * **Docker** y **Docker Compose**
 
 ### Uso
