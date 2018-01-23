@@ -16,7 +16,6 @@ Para su desarrollo, se han empleado distintas tecnologías:
 * **Puma** como servidor web Rack.
 * **MongoDB** como base de datos.
 * **Mongoid** como framework ODM (Object-Document-Mapper).
-* **Guard** para TDD
 * **Foreman**
 * **Rake**
 * **Travis CI** para integración continua.
