@@ -12,7 +12,7 @@ def Install():
 def Uninstall():
 	""" Remove the repo """
 
-	run('sudo rm -rf ./sptorrent-api')
+	run('cd && sudo rm -rf ./sptorrent-api')
 
 def Start():
 	""" Run docker-ce """
