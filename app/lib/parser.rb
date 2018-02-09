@@ -29,10 +29,10 @@ end
 
 class Parser
   class << self
-    URL = 'http://www.divxtotal2.net/'
+    URL = 'http://www.divxtotal1.org'
 
     def search_by_name( name )
-      busq = URL + '?s=' + name.clean
+      busq = URL + '/?s=' + name.clean
 
       encontrados = []
       doc = Nokogiri::HTML(open(busq))
