@@ -57,7 +57,7 @@ class LocalInterface
       puts "La entrada debe ser un número"
     end
 
-    if index >= @entries.length
+    if index > @entries.length
       raise 'El índice es incorrecto'
     end
 
@@ -101,21 +101,22 @@ class LocalInterface
 
    @selected.each do |elem|
      name = elem[:name].gsub(/\s/, '-')
-     url = elem[:url]
-     `wget #{url} -o #{@download_dir}/#{name}.torrent`
+     url = elem[:url].gsub('%28','(').gsub('%29',')')
+     filename = "#{@download_dir}/#{name}.torrent"
+
+     File.open(filename, "w") do |f|
+       IO.copy_stream(open(url), f)
+     end
+
+
      puts "Descargado " << name
    end
 
   end
 
-
-
-
-
-
 end
 
-dir =  "~/Descargas"
-#dir = "/mnt/dietpi_userdata/torrents"
+dir =  "#{Dir.home}/Descargas"
+#dir = "/mnt/usb_0/torrent"
 
 LocalInterface.new(dir)
