@@ -74,7 +74,7 @@ class LocalInterface
     @links = Parser.parse_entry(@entry)
 
     @links.each_with_index do |link,i|
-      p "[#{i}] #{link[:name]}"
+      puts "[#{i}] #{link[:name]}"
     end
 
     print "Selecciona una entrada [0], [2-3], all => "
