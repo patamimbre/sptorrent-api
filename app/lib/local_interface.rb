@@ -13,10 +13,11 @@ end
 
 
 class LocalInterface
-  attr_accessor :download_dir
+  attr_accessor :download_dir, :debug
 
-  def initialize(dir)
+  def initialize(dir, debug=false)
     @download_dir = dir
+    @debug = debug
     # ask the name and return found entries
     search
   end
@@ -24,6 +25,7 @@ class LocalInterface
   def search
     begin
       @entries = Parser.search_by_name(ask_name.clean)
+      puts "--DEBUG--" if @debug
       selectEntry
     rescue NoMethodError=>e
       puts "No hay coincidencias"
@@ -75,6 +77,7 @@ class LocalInterface
 
     @links.each_with_index do |link,i|
       puts "[#{i}] #{link[:name]}"
+      puts "=> #{link[:url]}" if @debug
     end
 
     print "Selecciona una entrada [0], [2-3], all => "
@@ -102,6 +105,7 @@ class LocalInterface
    @selected.each do |elem|
      name = elem[:name].gsub(/\s/, '-')
      url = elem[:url].gsub('%28','(').gsub('%29',')')
+     url = elem[:url].gsub('%7b','{').gsub('%7d','}')
      filename = "#{@download_dir}/#{name}.torrent"
 
      File.open(filename, "w") do |f|
@@ -119,4 +123,13 @@ end
 dir =  "#{Dir.home}/Descargas"
 #dir = "/mnt/usb_0/torrent"
 
-LocalInterface.new(dir)
+debug= ARGV.include? '--debug' 
+
+ind = ARGV.find_index('-d')
+unless ind.nil?
+  dir = ARGV[ind+1]
+end
+ARGV.clear
+p dir + ind.to_s
+
+LocalInterface.new(dir,debug)
